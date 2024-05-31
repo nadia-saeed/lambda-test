@@ -23,7 +23,7 @@ async function clickSpecificGround(locator){
 }
 
 // funcion 3
-async function toEnterUsername(username){
+async function enterUsername(username){
 usernameSection = $(locatorUsername)
 for(const usernameLetters of username){
     await usernameSection.addValue(usernameLetters)
@@ -31,7 +31,7 @@ for(const usernameLetters of username){
 }
 
 // function 4
-async function toEnterPassword(password){
+async function enterPassword(password){
 passwordSection = $(locatorPassword)
 for(const passwordLetters of password){
     await passwordSection.addValue(passwordLetters)
@@ -47,20 +47,20 @@ async function submitForm(){
 // function 6
 async function verifyFormSubmission(submissionText){
     submissionResponse = $(locatorSuccessMessage)
-    await expect(submissionResponse).toHaveTextContaining(submissionText)
+    await expect(submissionResponse).toHaveText(expect.stringContaining(submissionText))
 }
 
-Given('user opens the website', async () => {
+Given('user is on the form submit demo page', async () => {
     await openTheWebsite()
 });
 
-When('user fill the entries', async () => {
+When('user submits the form', async () => {
     await clickSpecificGround(locatorAutoHealing)
-    await toEnterUsername('Nobody')
-    await toEnterPassword('Hello World')
+    await enterUsername('Nobody')
+    await enterPassword('Hello World')
     await submitForm()
 });
 
-Then('the message gets submitted', async ()=> {
+Then('user gets a response message', async ()=> {
     await verifyFormSubmission('Login Successful')
 });

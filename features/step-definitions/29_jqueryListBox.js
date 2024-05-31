@@ -25,24 +25,46 @@ async function clickSpecificGround(locator){
 async function clickOnListElement(liNumber){
 let listElement = $(`//select[@class='border-4 border-gray-950 h-full p-10 rounded w-full form-control pickListSelect pickData']/option[@data-id='${liNumber}']`)
 await listElement.click()
+await locatorAdd.click()
 }
 
+async function verifyItemPresence(name){
+    await locatorFieldTwo.waitForDisplayed()
+    await expect(locatorFieldTwo).toHaveText(expect.stringContaining(name))
+}
 
-Given('user opens the website', async () => {
+async function verifyItemAbsence(name){
+    await locatorFieldTwo.waitForDisplayed()
+    isPresent = await locatorFieldTwo.isDisplayed()
+    await expect(isPresent).toBe(false)
+}
+
+Given('user is on the dual list box page', async () => {
     await openTheWebsite()
-});
-
-When('user filters the desired entry', async () => {
     await clickSpecificGround(locatorJQueryListBox)
-
 });
 
-Then('user gets the respective data if it was present', async ()=> {
-    await clickOnListElement('05')
-    await locatorAdd.click()
-    await browser.pause(1000)
-    await locatorAddAll.click()
-    await browser.pause(1000)
+When('user selects an item from the left box and adds', async () => {
+    await clickOnListElement('10')
+    await clickOnListElement('14')
+});
+
+Then('the item should be in the right box', async ()=> {
+    await verifyItemPresence('Andrea')
+    await verifyItemPresence('Una')
+
+When('user clicks remove-all button', async()=>{
     await locatorRemoveAll.click()
-    await browser.pause(1000)
+})
+
+Then('all items get removed from the box', async()=>{
+    await verifyItemAbsence('Andrea')
+    await verifyItemAbsence('Una')
+})
+    
+    // await browser.pause(1000)
+    // await locatorAddAll.click()
+    // await browser.pause(1000)
+    // await locatorRemoveAll.click()
+    // await browser.pause(1000)
 });

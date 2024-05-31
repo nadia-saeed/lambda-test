@@ -1,6 +1,8 @@
-Feature: Test the dropdown selection
+Feature: JQuery Dual List Box
 
-  Scenario: User selects option from the dropdown
-    Given user opens the website
-    When user filters the desired entry
-    Then user gets the respective data if it was present
+  Scenario: Add an item from the left box to the right box
+    Given user is on the dual list box page
+    When user selects an item from the left box and adds
+    Then the item should be in the right box
+    When user clicks remove-all button
+    Then all items get removed from the box

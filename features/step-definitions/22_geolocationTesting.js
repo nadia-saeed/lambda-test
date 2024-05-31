@@ -42,11 +42,11 @@ async function toGetTheValues(){
 // function 2
 async function toVerifyValues(IP, name, code, latitudeValue, longitudeValue){
     console.log(IP, name, code, latitudeValue, longitudeValue, 'LOOP')
-    await expect(IPaddress).toHaveTextContaining(IP)
-    await expect(countryName).toHaveTextContaining(name)
-    await expect(countryCode).toHaveTextContaining(code)
-    await expect(latitude).toHaveTextContaining(latitudeValue)
-    await expect(longitude).toHaveTextContaining(longitudeValue)
+    await expect(IPaddress).toHaveText(expect.stringContaining(IP))
+    await expect(countryName).toHaveText(expect.stringContaining(name))
+    await expect(countryCode).toHaveText(expect.stringContaining(code))
+    await expect(latitude).toHaveText(expect.stringContaining(latitudeValue))
+    await expect(longitude).toHaveText(expect.stringContaining(longitudeValue))
 }
 
 

@@ -38,7 +38,7 @@ async function toGetValue(){
 async function toVerifyResult(value){
     resultStatement = $(locatorResultStatement)
     await (resultStatement).waitForDisplayed()
-    await expect (resultStatement).toHaveTextContaining(value)
+    await expect (resultStatement).toHaveText(expect.stringContaining(value))
 }
 
 Given('user opens the demo page', async () => {

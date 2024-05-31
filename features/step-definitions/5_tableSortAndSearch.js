@@ -31,7 +31,7 @@ for(const letters of text){
 // function 4
 async function verifyResult(text){
 resultsTab = $('tbody tr[role="row"]')
-await expect(resultsTab).toHaveTextContaining(text)
+await expect(resultsTab).toHaveText(expect.stringContaining(text))
 }
 
 Given('user opens the website', async () => {

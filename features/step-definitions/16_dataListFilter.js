@@ -25,7 +25,7 @@ async function searchForEntry(searchStatement){
 }
 //function 4
 async function verifySearch(expectedText){
-    await expect(elementData).toHaveTextContaining(expectedText)
+    await expect(elementData).toHaveText(expect.stringContaining(expectedText))
 }
 
 

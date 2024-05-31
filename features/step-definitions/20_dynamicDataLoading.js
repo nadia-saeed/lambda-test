@@ -31,16 +31,16 @@ async function clickRandomButton(){
 async function verifyTheResult(){
 result = $(locatorResult)
 await result.waitForDisplayed()
-await expect(result).toHaveTextContaining('First Name')
-await expect(result).toHaveTextContaining('Last Name')
+await expect(result).toHaveText(expect.stringContaining('First Name'))
+await expect(result).toHaveText(expect.stringContaining('Last Name'))
 }
 
-Given('user opens the page', async () => {
+Given('user is on the dynamic data loading page', async () => {
     await openTheWebsite()
     await clickSpecificGround(locatorDynamicDataLoading)
 });
 
-When('user clicks the button', async () => {
+When('user clicks on the button', async () => {
     await clickRandomButton()
 });
 

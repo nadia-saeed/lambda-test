@@ -22,7 +22,6 @@ Feature: Getting the data from the tables
     When user chooses the relevant option
     Then user gets the respective data of all the pages
 
-
   Scenario: User searches for a desired data from the table
     Given user opens the website
     When user searches for a specific entry

@@ -47,20 +47,20 @@ async function submitForm(){
 // function 6
 async function verifyFormSubmission(submissionText){
     submissionResponse = $(locatorSubmissionResponse)
-    await expect(submissionResponse).toHaveTextContaining(submissionText)
+    await expect(submissionResponse).toHaveText(expect.stringContaining(submissionText))
 }
 
-Given('user opens the website', async () => {
+Given('user is on the form submit demo page', async () => {
     await openTheWebsite()
 });
 
-When('user fill the entries', async () => {
+When('user submits the form', async () => {
     await clickSpecificGround(locatorAjaxFormSubmit)
     await enterName('Nobody')
     await enterMessage('Hello World')
     await submitForm()
 });
 
-Then('the message gets submitted', async ()=> {
+Then('user gets a response message', async ()=> {
     await verifyFormSubmission('Ajax Request is Processing!')
 });

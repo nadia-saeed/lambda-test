@@ -30,7 +30,7 @@ async function searchItemLeft (item, locatorSearch){
 async function verifySearch(locatorResult, item){
     // await locatorResult.waitForDisplayed()
 // result = await locatorResult.getText()
-await expect (locatorResult).toHaveTextContaining(item)
+await expect (locatorResult).toHaveText(expect.stringContaining(item))
 }
 
 Given('user opens the website', async () => {

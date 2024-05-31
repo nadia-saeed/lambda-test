@@ -31,10 +31,10 @@ async function toDownload(){
 // function 6
 async function verifyDownloadStatus(status){
     downloadStatus = $(locatorDownloadSuccess)
-    await expect(downloadStatus).toHaveTextContaining(status)
+    await expect(downloadStatus).toHaveText(expect.stringContaining(status))
 }
 
-Given('user opens the website', async () => {
+Given('user is on the download page', async () => {
     await openTheWebsite()
 });
 

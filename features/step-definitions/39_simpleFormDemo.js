@@ -51,7 +51,7 @@ async function toClickButton(){
 // function 5
 async function toVerifyValue(message){
     outputValue = $(locatorOutputValue)
-    await expect(outputValue).toHaveTextContaining(message)
+    await expect(outputValue).toHaveText(expect.stringContaining(message))
 }
 
 // function 6
