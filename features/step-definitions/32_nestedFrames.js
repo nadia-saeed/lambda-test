@@ -19,4 +19,9 @@ async function clickSpecificGround(locator){
 
 
 
+Given('I am on the nested frames page', async () => {
+    await openTheWebsite()
+    await clickSpecificGround(locatorNestedFrames)
+});
+
 
