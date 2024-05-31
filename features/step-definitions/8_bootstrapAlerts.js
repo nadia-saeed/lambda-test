@@ -17,19 +17,19 @@ async function clickSpecificGround(locator){
 }
 
 // function 3
-async function toClick(type){
+async function click(type){
     let locator = `button.btn-${type}`
     let responseAlert = $(locator)
     await responseAlert.click()
 }
 
 // function 4
-async function toVerifyTheAlert(type, requiredText){
-alertTab = $(`//div[contains(@class, "alert-${type}")]`)
-await alertTab.waitForDisplayed()
-let alertText = await alertTab.getText()
-await expect(alertText).toContain(requiredText)
-console.log(alertText, 'PLO')
+async function verifyTheAlert(type, requiredText){
+    alertTab = $(`//div[contains(@class, "alert-${type}")]`)
+    await alertTab.waitForDisplayed()
+    let alertText = await alertTab.getText()
+    await expect(alertText).toContain(requiredText)
+
 }
 
 Given('user opens the website', async () => {
@@ -38,18 +38,17 @@ Given('user opens the website', async () => {
 });
 
 When('user searches for a autoclosable entry', async () => {
-    await toClick('success-auto')
+    await click('success-auto')
 });
 
 Then('user gets the relevant alert for a specific time', async ()=> {
-    await toVerifyTheAlert('success-auto', 'Autocloseable' )
+    await verifyTheAlert('success-auto', 'Autocloseable' )
 });
 
 When('user searches for a normal entry', async () => {
-    await toClick('info-manual')
+    await click('info-manual')
 });
 
 Then('user gets the relevant alert to be closed manually', async ()=> {
-    await toVerifyTheAlert('info-manual', 'Normal')
-    await browser.pause(4000)
+    await verifyTheAlert('info-manual', 'Normal')
 });

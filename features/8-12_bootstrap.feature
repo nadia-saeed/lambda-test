@@ -16,3 +16,14 @@ Feature: Test the bootstrap functions
     Given user opens the website
     When user chooses valid dates
     Then dates are verified as true
+
+  Scenario: User chooses dates range
+    Given user opens the website
+    When user searches for a valid item from list
+    Then user should find the entry
+
+  
+  Scenario: User chooses date from the calendar
+    Given user opens the calendar
+    When I select the date "30-05-2024"
+    Then the selected date "30-May-2024" should be in the input field

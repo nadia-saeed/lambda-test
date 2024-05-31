@@ -26,7 +26,6 @@ async function searchEntry(searchStatement, output){
     getResultsLocator = $(`//table[@id='task-table']//tr[td[text()='${searchStatement}']]`)
     isPresent = await (getResultsLocator).isDisplayed()
     await expect(isPresent).toBe(output)
-    // await browser.pause(2000)
 }
 
 Given('user opens the website', async () => {

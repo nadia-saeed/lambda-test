@@ -19,12 +19,20 @@ async function clickSpecificGround(locator){
 
 // funcion 3
 async function toContextClick(locatorDiv){
-    let newLocator = await $(locatorDiv)
-  await newLocator.waitForDisplayed()
-    // await browser.rightClick(locatorDiv)
-    await browser.action('pointer', {
-        actions: [{type: 'pointerMove', origin: newLocator }, {type: 'pointerDown', newLocator: 2}, {type: 'pointerUp', newLocator: 2}]
-    }).perform()
+    const elementDiv = await $(locatorDiv)
+    await elementDiv.moveTo();
+    await browser.action('pointer', { pointerType: 'mouse' })
+        .move({ origin: elementDiv })
+        .down({ button: 2 })
+        .perform();
+
+}
+async function verifyAlert(expectedAlertText){
+    const alertText = await browser.getAlertText();
+    await expect(alertText).toBe(expectedAlertText);
+    
+    // Accept the alert
+    await browser.acceptAlert();
 }
 
 Given('user opens the website', async () => {
@@ -39,5 +47,5 @@ When('user clicks the div', async () => {
 });
 
 Then('user gets the alert message', async ()=> {
-    await browser.pause(1000)
+    await verifyAlert('You selected a context menu')
 });

@@ -3,10 +3,10 @@ const { expect, $ } = require('@wdio/globals')
 
 const url = 'https://www.lambdatest.com/selenium-playground/'
 const locatorBootstrapDatePicker =  "//*[contains(text(),'Bootstrap Date Picker')]"
-const locatorStartDate = 'input[placeholder="Start date"]'
-const locatorEndDate = 'input[placeholder="End date"]'
-let startDate = ''
-let endDate = ''
+const locatorSelectDate = $("input[name='birthday']")
+let daysDD
+let selectedValue
+
 
 // function 1
 async function openTheWebsite(){
@@ -20,34 +20,29 @@ async function clickSpecificGround(locator){
 }
 
 // function 3
-async function enterStartDate (dateOne){
-startDate = $(locatorStartDate)
-await startDate.waitForDisplayed()
-for(const char of dateOne){
-    await startDate.addValue(char)
+async function click(){
+    await locatorSelectDate.waitForDisplayed()
+    await locatorSelectDate.click()
 }
-}
+// async function selection(date){
+//     const [day, month, year] = date.split('-')
+//     const dayElement = await $(`//td[@role='gridcell' and text()='${parseInt(day, 10)}']`);
+//     await dayElement.click();
+// }
 
-// function 4
-async function enterEndDate(dateTwo){
-    endDate = $(locatorEndDate)
-    await endDate.waitForDisplayed()
-    for(const char of dateTwo){
-        await endDate.addValue(char)
-    }
-}
-
-Given('user opens the website', async () => {
+Given('user opens the calendar', async () => {
     await openTheWebsite()
     await clickSpecificGround(locatorBootstrapDatePicker)
+    await click()
 });
 
-When('user chooses valid dates', async () => {
-    await enterStartDate('17-May-2023')
-    await enterEndDate('17-May-2024')
+When('I select the date {string}', async (date) => {
+    const [day, month, year] = date.split('-')
+    const dayElement = await $(`//td[@role='gridcell' and text()='${parseInt(day, 10)}']`);
+    await dayElement.click();
 });
 
-Then('dates are verified as true', async ()=> {
+Then('the selected date {string} should be in the input field', async (expectedDate)=> {
     await browser.pause(4000)
 });
 

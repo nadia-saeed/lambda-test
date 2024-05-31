@@ -32,6 +32,7 @@ Given('user opens the website', async () => {
     await clickSpecificGround(locatorSelectDropdownList)
 });
 
+
 When('user chooses the DD option', async () => {
     await toSelectFromDD(day)
 });

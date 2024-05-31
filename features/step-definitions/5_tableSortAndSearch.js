@@ -20,7 +20,7 @@ async function clickSpecificGround(locator){
 }
 
 // function 3
-async function toSearch(text){
+async function searchForTableEntry(text){
 searchTab = $(locatorSearch)
 await searchTab.waitForDisplayed()
 for(const letters of text){
@@ -29,7 +29,7 @@ for(const letters of text){
 }
 
 // function 4
-async function toVerifyTheResult(text){
+async function verifyResult(text){
 resultsTab = $('tbody tr[role="row"]')
 await expect(resultsTab).toHaveTextContaining(text)
 }
@@ -40,10 +40,10 @@ Given('user opens the website', async () => {
 });
 
 When('user searches for a specific entry', async () => {
-    await toSearch('Bennet')
+    await searchForTableEntry('Bennet')
     
 });
 
 Then('user gets the relevant result', async ()=> {
-    await toVerifyTheResult('Bennett')
+    await verifyResult('Bennett')
 });

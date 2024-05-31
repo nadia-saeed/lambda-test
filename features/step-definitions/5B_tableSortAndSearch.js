@@ -26,11 +26,11 @@ async function clickSpecificGround(locator){
 async function clickToSort(){
     await $(locatorSort).waitForDisplayed()
     await $(locatorSort).click()
-const rows = await $$('tbody tr[role="row"]')
-const columns = await rows[1].$$('td')
-const columns2 = await rows[2].$$('td')
-console.log(await columns[0].getText())
-console.log(await columns2[0].getText())
+    const rows = await $$('tbody tr[role="row"]')
+    const columns = await rows[1].$$('td')
+    const columns2 = await rows[2].$$('td')
+    console.log(await columns[0].getText())
+    console.log(await columns2[0].getText())
 
 
 await browser.pause(7000)

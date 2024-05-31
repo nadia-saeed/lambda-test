@@ -7,9 +7,9 @@ const locatorUsername = "//input[@id='username']"
 const locatorPassword = "//input[@id='password']"
 const locatorSubmitButton = ".bg-black.border-black.text-white.rounded.px-10.py-5"
 const locatorSuccessMessage = "p.text-green-100.mt-10"
-let usernameSection = ''
-let passwordSection = ''
-let submitButton = ''
+let usernameSection
+let passwordSection
+let submitButton
 
 // function 1
 async function openTheWebsite(){
@@ -39,7 +39,7 @@ for(const passwordLetters of password){
 }
 
 // function 5
-async function toSubmit(){
+async function submitForm(){
     submitButton = $(locatorSubmitButton)
     await submitButton.click()
 }
@@ -58,7 +58,7 @@ When('user fill the entries', async () => {
     await clickSpecificGround(locatorAutoHealing)
     await toEnterUsername('Nobody')
     await toEnterPassword('Hello World')
-    await toSubmit()
+    await submitForm()
 });
 
 Then('the message gets submitted', async ()=> {

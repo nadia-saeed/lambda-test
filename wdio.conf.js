@@ -22,7 +22,6 @@ exports.config = {
     //
     specs: [
         './features/**/*.feature'
-
     ],
     // Patterns to exclude.
     exclude: [
@@ -134,23 +133,40 @@ exports.config = {
         // require: ['./features/step-definitions/3_tableFilter.js'],
         // require: ['./features/step-definitions/4_tablePagination.js'],
     //    require: ['./features/step-definitions/5_tableSortAndSearch.js'],
-      //  require: ['./features/step-definitions/6_ajaxFormSubmit.js'],
+        //require: ['./features/step-definitions/6_ajaxFormSubmit.js'],
         // require: ['./features/step-definitions/7_autoHealing.js'],
         // require: ['./features/step-definitions/12_bootstrapProgressBar.js'],
-        // require: ['./features/step-definitions/15_contextMenu.js'],
+    //     require: ['./features/step-definitions/15_contextMenu.js'],
     //  require: ['./features/step-definitions/22_geolocationTesting.js'],
-        require: ['./features/step-definitions/39_simpleFormDemo.js'],
+    //    require: ['./features/step-definitions/39_simpleFormDemo.js'],
         // require: ['./features/step-definitions/36_redirection.js'],
         // require: ['./features/step-definitions/20_dynamicDataLoading.js'],
         // require: ['./features/step-definitions/15_contextMenu.js'],
         // require: ['./features/step-definitions/11_bootstrapModal.js'], 
         // require: ['./features/step-definitions/5B_tableSortAndSearch.js'],
-        // require: ['./features/step-definitions/8_bootstrapAlerts.js'],
+        //require: ['./features/step-definitions/8_bootstrapAlerts.js'],
         // require: ['./features/step-definitions/9_bootstrapDatePicker.js'],
         // require: ['./features/step-definitions/37B_selectDropdownList.js'],
-        // require: ['./features/step-definitions/**/*.js'],
+        // require: ['./features/step-definitions/40_statusCodes.js'],
+        // require: ['./features/step-definitions/41_uploadFileDemo.js'],
+        // require: ['./features/step-definitions/38_shadowDOM.js'],
+    //     require: ['./features/step-definitions/10_bootstrapListBox.js'],
+        // require: ['./features/step-definitions/24_iframeDemo.js'],
+    //    require: ['./features/step-definitions/31_keyPress.js'],
+    // require: ['./features/step-definitions/28_jqueryDownloadProgressBars.js'],
+    // require: ['./features/step-definitions/13_brokenImage.js'],
+    //require: ['./features/step-definitions/17_downloadFileDemo.js'],
+    // require: ['./features/step-definitions/25_inputFormSubmit.js'],
+    //require: ['./features/step-definitions/14_checkboxDemo.js'],
+    //require: ['./features/step-definitions/16_dataListFilter.js'],
+    // require: ['./features/step-definitions/18_dragAndDropSliders.js'],
+    //require: ['./features/step-definitions/30_jquerySelectDropdown.js'],
+    //require: ['./features/step-definitions/29_jqueryListBox.js'],
+    require: ['./features/step-definitions/32_nestedFrames.js'],
+//    require: ['./features/**/*.js'],
 
-        
+
+    
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)

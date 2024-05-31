@@ -7,9 +7,9 @@ const locatorName = "//input[@id='title']"
 const locatorMessage = "#description"
 const locatorSubmitButton = "//input[@id='btn-submit']"
 const locatorSubmissionResponse = "#submit-control"
-let nameSection = ''
-let messageSection = ''
-let submitButton = ''
+let nameSection
+let messageSection
+let submitButton
 
 // function 1
 async function openTheWebsite(){
@@ -23,7 +23,7 @@ async function clickSpecificGround(locator){
 }
 
 // funcion 3
-async function toEnterName(name){
+async function enterName(name){
 nameSection = $(locatorName)
 for(const nameLetters of name){
     await nameSection.addValue(nameLetters)
@@ -31,7 +31,7 @@ for(const nameLetters of name){
 }
 
 // function 4
-async function toEnterMessage(message){
+async function enterMessage(message){
 messageSection = $(locatorMessage)
 for(const messageLetters of message){
     await messageSection.addValue(messageLetters)
@@ -39,7 +39,7 @@ for(const messageLetters of message){
 }
 
 // function 5
-async function toSubmit(){
+async function submitForm(){
     submitButton = $(locatorSubmitButton)
     await submitButton.click()
 }
@@ -56,11 +56,11 @@ Given('user opens the website', async () => {
 
 When('user fill the entries', async () => {
     await clickSpecificGround(locatorAjaxFormSubmit)
-    await toEnterName('Nobody')
-    await toEnterMessage('Hello World')
-    await toSubmit()
+    await enterName('Nobody')
+    await enterMessage('Hello World')
+    await submitForm()
 });
 
 Then('the message gets submitted', async ()=> {
-    await verifyFormSubmission('Submit')
+    await verifyFormSubmission('Ajax Request is Processing!')
 });
