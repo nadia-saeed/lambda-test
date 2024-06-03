@@ -1,5 +1,5 @@
 Feature: Verify the submissions
-
+@current
   Scenario: Submit form with valid inputs
     Given user is on the form submit demo page
     When user submits the form

@@ -6,8 +6,6 @@ const locatorTableDataDownload =  "//*[contains(text(),'Table Data Download')]"
 let tableData = []
 let getlocator = ''
 
-
-
 // function 1
 async function openTheWebsite(){
     await browser.url(url)

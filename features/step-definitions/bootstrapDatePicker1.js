@@ -30,7 +30,6 @@ async function selectBirthdayDate(date){
 
 // function 5
 async function verifyBirthdayDate(date){
-    //let finalLocator = await $("input[name='birthday']")
     let actualDate = await locatorSelectDate.getValue()
     await expect(actualDate).toBe(date)
 }

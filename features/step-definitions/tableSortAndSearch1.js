@@ -34,7 +34,7 @@ resultsTab = $('tbody tr[role="row"]')
 await expect(resultsTab).toHaveText(expect.stringContaining(text))
 }
 
-Given('user opens the website', async () => {
+Given('user is on the table sort and search page', async () => {
     await openTheWebsite()
     await clickSpecificGround(locatorTableSortAndSearch)
 });

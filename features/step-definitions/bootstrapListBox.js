@@ -3,7 +3,6 @@ const { expect, $ } = require('@wdio/globals')
 
 const url = 'https://www.lambdatest.com/selenium-playground/'
 const locatorBootstrapListBox =  "//*[contains(text(),'Bootstrap List Box')]"
-
 const locatorSearchLeft = $("div.dual-list.list-left input[name='SearchDualList']")
 const locatorSearchRight = $("div.dual-list.list-right input[name='SearchDualList']")
 const locatorResultList = $$('li.list-group-item')

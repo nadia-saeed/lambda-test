@@ -7,8 +7,6 @@ const elementDownloadFileDemo =  $("//*[contains(text(),'Download File Demo')]")
 const elementDownloadButton = $('//button[@type="button"]')
 const downloadPath = 'This PC/Downloads'
 
-
-
 // function 1
 async function openTheWebsite(){
     await browser.url(url);

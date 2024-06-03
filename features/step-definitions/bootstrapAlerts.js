@@ -3,7 +3,6 @@ const { expect, $ } = require('@wdio/globals')
 // done
 const url = 'https://www.lambdatest.com/selenium-playground/'
 const locatorBootstrapAlerts =  "//*[contains(text(),'Bootstrap Alerts')]"
-let alertTab = ''
 
 // function 1
 async function openTheWebsite(){
@@ -25,7 +24,7 @@ async function click(type){
 
 // function 4
 async function verifyTheAlert(type, requiredText){
-    alertTab = $(`//div[contains(@class, "alert-${type}")]`)
+    let alertTab = $(`//div[contains(@class, "alert-${type}")]`)
     await alertTab.waitForDisplayed()
     let alertText = await alertTab.getText()
     await expect(alertText).toContain(requiredText)

@@ -51,11 +51,6 @@ async function disabledCheckBox(option){
     await expect(isDisabled).toBe(null);
 }
 
-
-
-
-
-
 Given('user opens the checkbox demo page', async () => {
     await openTheWebsite()
     await clickSpecificGround(locatorCheckDemo)

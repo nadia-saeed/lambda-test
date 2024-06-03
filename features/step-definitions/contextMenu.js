@@ -5,7 +5,6 @@ const url = 'https://www.lambdatest.com/selenium-playground/'
 const locatorContextMenu =  "//*[contains(text(),' Context Menu')]"
 const locatorDivSection = "#hot-spot"
 
-
 // function 1
 async function openTheWebsite(){
     await browser.url(url)
@@ -31,7 +30,6 @@ async function verifyAlert(expectedAlertText){
     const alertText = await browser.getAlertText();
     await expect(alertText).toBe(expectedAlertText);
     
-    // Accept the alert
     await browser.acceptAlert();
 }
 

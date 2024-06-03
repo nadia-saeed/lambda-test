@@ -1,10 +1,4 @@
-Feature: Test the bootstrap functions
-
-  Scenario: User downloads certain file from the website
-    Given user opens the website
-    When user launches single modal
-    Then its relevant dialog will be displayed
-
+Feature: Test Bootstrap Alerts
   Scenario: User gets alert messages
     Given user opens the website
     When user searches for a autoclosable entry

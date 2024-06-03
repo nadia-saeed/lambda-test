@@ -6,9 +6,6 @@ const locatorBootstrapProgressBar =  "//*[contains(text(),'Bootstrap Progress ba
 const locatorStartDownload = "#dwnBtn"
 const locatorDownloadSuccess = ".success.text-green-100.mb-10"
 
-let downloadStatus = ''
-let startDownload = ''
-
 // function 1
 async function openTheWebsite(){
     await browser.url(url)
@@ -23,14 +20,14 @@ async function clickSpecificGround(locator){
 
 // function 5
 async function toDownload(){
-    startDownload = $(locatorStartDownload)
+    let startDownload = $(locatorStartDownload)
     await startDownload.waitForDisplayed()
     await startDownload.click()
 }
 
 // function 6
 async function verifyDownloadStatus(status){
-    downloadStatus = $(locatorDownloadSuccess)
+    let downloadStatus = $(locatorDownloadSuccess)
     await expect(downloadStatus).toHaveText(expect.stringContaining(status))
 }
 

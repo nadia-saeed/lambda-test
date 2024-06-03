@@ -5,9 +5,6 @@ const url = 'https://www.lambdatest.com/selenium-playground/'
 const locatorDynamicDataLoading = "//*[contains(text(),'Dynamic Data Loading')]"
 const locatorRandomButton = '//button[@id="save"]'
 const locatorResult = '//div[@id="loading"]'
-let randomButton = ''
-let result = ''
-let isPresent = ''
 
 // function 1
 async function openTheWebsite(){
@@ -22,17 +19,17 @@ async function clickSpecificGround(locator){
 
 // function 3
 async function clickRandomButton(){
-    randomButton = $(locatorRandomButton)
+    let randomButton = $(locatorRandomButton)
     await randomButton.waitForDisplayed()
     await randomButton.click()
 }
 
 // function 4
 async function verifyTheResult(){
-result = $(locatorResult)
-await result.waitForDisplayed()
-await expect(result).toHaveText(expect.stringContaining('First Name'))
-await expect(result).toHaveText(expect.stringContaining('Last Name'))
+    let result = $(locatorResult)
+    await result.waitForDisplayed()
+    await expect(result).toHaveText(expect.stringContaining('First Name'))
+    await expect(result).toHaveText(expect.stringContaining('Last Name'))
 }
 
 Given('user is on the dynamic data loading page', async () => {
@@ -46,5 +43,4 @@ When('user clicks on the button', async () => {
 
 Then('random users details appear', async ()=> {
     await verifyTheResult()
-    await browser.pause(3000)
 });

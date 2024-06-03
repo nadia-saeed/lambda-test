@@ -7,9 +7,6 @@ const locatorUsername = "//input[@id='username']"
 const locatorPassword = "//input[@id='password']"
 const locatorSubmitButton = ".bg-black.border-black.text-white.rounded.px-10.py-5"
 const locatorSuccessMessage = "p.text-green-100.mt-10"
-let usernameSection
-let passwordSection
-let submitButton
 
 // function 1
 async function openTheWebsite(){
@@ -24,23 +21,23 @@ async function clickSpecificGround(locator){
 
 // funcion 3
 async function enterUsername(username){
-usernameSection = $(locatorUsername)
-for(const usernameLetters of username){
-    await usernameSection.addValue(usernameLetters)
+    let usernameSection = $(locatorUsername)
+        for(const usernameLetters of username){
+        await usernameSection.addValue(usernameLetters)
 }
 }
 
 // function 4
 async function enterPassword(password){
-passwordSection = $(locatorPassword)
-for(const passwordLetters of password){
-    await passwordSection.addValue(passwordLetters)
+    let passwordSection = $(locatorPassword)
+        for(const passwordLetters of password){
+        await passwordSection.addValue(passwordLetters)
 }
 }
 
 // function 5
 async function submitForm(){
-    submitButton = $(locatorSubmitButton)
+    let submitButton = $(locatorSubmitButton)
     await submitButton.click()
 }
 

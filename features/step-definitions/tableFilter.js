@@ -26,11 +26,6 @@ async function getResults (filterText){
     let arr= []
     let rows = $$('//div[contains(@class, "content")]//h3');
 
-    // for(let i=0; i<rows.length; i++){
-    //  arr.push(await rows[i].getText())
-    // }
-    // console.log(arr, 'arrr')
-
     let found = false;
     for (const row of rows) {
       const cellText = await row.getText();

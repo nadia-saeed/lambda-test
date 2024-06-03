@@ -7,9 +7,6 @@ const locatorSingleModal = 'button[data-target="#myModal"]'
 const locatorMultipleModal = 'button[data-target="#myMultiModal"]'
 const locatorSingleModalTitle = '//button[contains(text(), "Changes")]'
 const locatorSubmissionResponse = "#submit-control"
-let isPresent = ''
-let messageSection = ''
-let submitButton = ''
 
 // function 1
 async function openTheWebsite(){
@@ -36,7 +33,7 @@ async function toVerifySingleModal(){
 }
 
 async function toClickMultipleModal(){
-await $(locatorMultipleModal).click()
+    await $(locatorMultipleModal).click()
 }
 
 Given('user opens the website', async () => {
