@@ -22,7 +22,9 @@ exports.config = {
     //
     specs: [
         // '27_jqueryDatePicker.feature',
-        '21_fileDownload.feature',
+        '23A_hoverDemo.feature',
+        // '19_dragAndDrop.feature',
+        // '21_fileDownload.feature',
         // '9A_bootstrapDatePicker.feature',
         //'26_javascriptAlerts.feature',
         //'10_bootstrapListBox.feature'
@@ -153,7 +155,7 @@ exports.config = {
         // require: ['./features/step-definitions/11_bootstrapModal.js'], 
         // require: ['./features/step-definitions/5B_tableSortAndSearch.js'],
         //require: ['./features/step-definitions/8_bootstrapAlerts.js'],
-        require: ['./features/step-definitions/9A_bootstrapDatePicker.js'],
+        // require: ['./features/step-definitions/9A_bootstrapDatePicker.js'],
         // require: ['./features/step-definitions/37B_selectDropdownList.js'],
         // require: ['./features/step-definitions/40_statusCodes.js'],
         // require: ['./features/step-definitions/41_uploadFileDemo.js'],
@@ -170,15 +172,17 @@ exports.config = {
     // require: ['./features/step-definitions/18_dragAndDropSliders.js'],
     //require: ['./features/step-definitions/30_jquerySelectDropdown.js'],
     //require: ['./features/step-definitions/29_jqueryListBox.js'],
-//    require: ['./features/step-definitions/32_nestedFrames.js'],
+//  require: ['./features/step-definitions/32_nestedFrames.js'],
     // require: ['./features/step-definitions/35_radioButtonsDemo.js'],
     // require: ['./features/step-definitions/43_windowPopupModal.js'],
     // require: ['./features/step-definitions/34_progressBarModal.js'],
     // require: ['./features/step-definitions/33_overlappedElement.js'],
-// require: ['./features/step-definitions/26_javascriptAlerts.js'],
-// require: ['./features/step-definitions/27_jqueryDatePicker.js'],
-require: ['./features/step-definitions/21_fileDownload.js'],
-//    require: ['./features/**/*.js'],
+    // require: ['./features/step-definitions/26_javascriptAlerts.js'],
+    // require: ['./features/step-definitions/27_jqueryDatePicker.js'],
+    // require: ['./features/step-definitions/21_fileDownload.js'],
+    // require: ['./features/step-definitions/19_dragAndDrop.js'],
+    require: ['./features/step-definitions/23A_hoverDemo.js'],
+    // require: ['./features/**/*.js'],
 
 
     
