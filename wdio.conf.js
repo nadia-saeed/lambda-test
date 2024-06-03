@@ -21,8 +21,18 @@ exports.config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './features/**/*.feature'
-
+        // 'jqueryDatePicker.feature',
+           'ajaxFormSubmit.feature',
+        // '2hoverDemo1.feature',
+        // 'dragAndDrop.feature',
+        // 'fileDownload.feature',
+        // 'bootstrapDatePicker1.feature',
+        // 'javascriptAlerts.feature',
+        // 'bootstrapListBox.feature'
+        // 'nestedFrames.feature'
+        // 'overlappedElement.feature'
+        // 'progressBarModal.feature',
+        // './features/**/*.feature'
     ],
     // Patterns to exclude.
     exclude: [
@@ -129,28 +139,50 @@ exports.config = {
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        // require: ['./features/step-definitions/1_tableDataDownload.js'],
-        // require: ['./features/step-definitions/2_tableDataSearch.js'],
-        // require: ['./features/step-definitions/3_tableFilter.js'],
-        // require: ['./features/step-definitions/4_tablePagination.js'],
-    //    require: ['./features/step-definitions/5_tableSortAndSearch.js'],
-      //  require: ['./features/step-definitions/6_ajaxFormSubmit.js'],
-        // require: ['./features/step-definitions/7_autoHealing.js'],
-        // require: ['./features/step-definitions/12_bootstrapProgressBar.js'],
-        // require: ['./features/step-definitions/15_contextMenu.js'],
-    //  require: ['./features/step-definitions/22_geolocationTesting.js'],
-        require: ['./features/step-definitions/39_simpleFormDemo.js'],
-        // require: ['./features/step-definitions/36_redirection.js'],
-        // require: ['./features/step-definitions/20_dynamicDataLoading.js'],
-        // require: ['./features/step-definitions/15_contextMenu.js'],
-        // require: ['./features/step-definitions/11_bootstrapModal.js'], 
-        // require: ['./features/step-definitions/5B_tableSortAndSearch.js'],
-        // require: ['./features/step-definitions/8_bootstrapAlerts.js'],
-        // require: ['./features/step-definitions/9_bootstrapDatePicker.js'],
-        // require: ['./features/step-definitions/37B_selectDropdownList.js'],
-        // require: ['./features/step-definitions/**/*.js'],
+        require: ['./features/step-definitions/ajaxFormSubmit.js'],
+        // require: ['./features/step-definitions/autoHealing.js'],
+        // require: ['./features/step-definitions/bootstrapAlerts.js'],
+        // require: ['./features/step-definitions/bootstrapDatePicker1.js'],
+        // require: ['./features/step-definitions/bootstrapDatePicker2.js'],
+        // require: ['./features/step-definitions/bootstrapListBox.js'],
+        // require: ['./features/step-definitions/bootstrapModal.js'], 
+        // require: ['./features/step-definitions/bootstrapProgressBar.js'],
+        // require: ['./features/step-definitions/brokenImage.js'],
+        // require: ['./features/step-definitions/checkboxDemo.js'],
+        // require: ['./features/step-definitions/contextMenu.js'],
+        // require: ['./features/step-definitions/dataListFilter.js'],
+        // require: ['./features/step-definitions/downloadFileDemo.js'],
+        // require: ['./features/step-definitions/dragAndDropSliders.js'],
+        // require: ['./features/step-definitions/dragAndDrop.js'],
+        // require: ['./features/step-definitions/dynamicDataLoading.js'],
+        // require: ['./features/step-definitions/fileDownload.js'],
+        // require: ['./features/step-definitions/geolocationTesting.js'],
+        // require: ['./features/step-definitions/hoverDemo1.js'],
+        // require: ['./features/step-definitions/hoverDemo2.js'],
+        // require: ['./features/step-definitions/iframeDemo.js'],
+        // require: ['./features/step-definitions/inputFormSubmit.js'],
+        // require: ['./features/step-definitions/javascriptAlerts.js'],
+        // require: ['./features/step-definitions/jqueryDatePicker.js'],
+        // require: ['./features/step-definitions/jqueryDownloadProgressBars.js'],
+        // require: ['./features/step-definitions/jqueryListBox.js'],
+        // require: ['./features/step-definitions/jquerySelectDropdown.js'],
+        // require: ['./features/step-definitions/keyPress.js'],
+        // require: ['./features/step-definitions/nestedFrames.js'],
+        // require: ['./features/step-definitions/overlappedElement.js'],
+        // require: ['./features/step-definitions/progressBarModal.js'],
+        // require: ['./features/step-definitions/radioButtonsDemo.js'],
+        // require: ['./features/step-definitions/redirection.js'],
+        // require: ['./features/step-definitions/selectDropdownList1.js'],
+        // require: ['./features/step-definitions/selectDropdownList2.js'],
+        // require: ['./features/step-definitions/shadowDOM.js'],
+        // require: ['./features/step-definitions/simpleFormDemo.js'],
+        // require: ['./features/step-definitions/statusCodes.js'],
+        // require: ['./features/step-definitions/uploadFileDemo.js'],
+        // require: ['./features/step-definitions/windowPopupModal.js'],
+        // require: ['./features/**/*.js'],
 
-        
+
+    
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
