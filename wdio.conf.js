@@ -21,7 +21,10 @@ exports.config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './features/**/*.feature'
+        '32_nestedFrames.feature'
+        //'33_overlappedElement.feature'
+    //    '34_progressBarModal.feature',
+    //    './features/**/*.feature'
     ],
     // Patterns to exclude.
     exclude: [
@@ -138,7 +141,7 @@ exports.config = {
         //require: ['./features/step-definitions/12_bootstrapProgressBar.js'],
     //     require: ['./features/step-definitions/15_contextMenu.js'],
     //require: ['./features/step-definitions/22_geolocationTesting.js'],
-       require: ['./features/step-definitions/39_simpleFormDemo.js'],
+     //  require: ['./features/step-definitions/39_simpleFormDemo.js'],
         // require: ['./features/step-definitions/36_redirection.js'],
         // require: ['./features/step-definitions/20_dynamicDataLoading.js'],
         // require: ['./features/step-definitions/15_contextMenu.js'],
@@ -162,8 +165,12 @@ exports.config = {
     // require: ['./features/step-definitions/18_dragAndDropSliders.js'],
     //require: ['./features/step-definitions/30_jquerySelectDropdown.js'],
     //require: ['./features/step-definitions/29_jqueryListBox.js'],
-    //require: ['./features/step-definitions/32_nestedFrames.js'],
+    require: ['./features/step-definitions/32_nestedFrames.js'],
     // require: ['./features/step-definitions/35_radioButtonsDemo.js'],
+    // require: ['./features/step-definitions/43_windowPopupModal.js'],
+    // require: ['./features/step-definitions/34_progressBarModal.js'],
+    // require: ['./features/step-definitions/33_overlappedElement.js'],
+
 //    require: ['./features/**/*.js'],
 
 

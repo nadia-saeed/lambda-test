@@ -1,5 +1,5 @@
 Feature: Simple Form Demo
-@current
+
 Scenario: Verify the results
 Given user opens the page
 When user enters message

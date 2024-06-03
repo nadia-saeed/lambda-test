@@ -52,10 +52,10 @@ async function verifyFormSubmission(submissionText){
 
 Given('user is on the form submit demo page', async () => {
     await openTheWebsite()
+    await clickSpecificGround(locatorAjaxFormSubmit)
 });
 
 When('user submits the form', async () => {
-    await clickSpecificGround(locatorAjaxFormSubmit)
     await enterName('Nobody')
     await enterMessage('Hello World')
     await submitForm()
