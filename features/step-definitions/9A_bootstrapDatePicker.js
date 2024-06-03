@@ -4,9 +4,6 @@ const { expect, $ } = require('@wdio/globals')
 const url = 'https://www.lambdatest.com/selenium-playground/'
 const locatorBootstrapDatePicker =  "//*[contains(text(),'Bootstrap Date Picker')]"
 const locatorSelectDate = $("input[name='birthday']")
-let daysDD
-let selectedValue
-
 
 // function 1
 async function openTheWebsite(){
@@ -24,11 +21,19 @@ async function click(){
     await locatorSelectDate.waitForDisplayed()
     await locatorSelectDate.click()
 }
-// async function selection(date){
-//     const [day, month, year] = date.split('-')
-//     const dayElement = await $(`//td[@role='gridcell' and text()='${parseInt(day, 10)}']`);
-//     await dayElement.click();
-// }
+
+// function 4
+async function selectBirthdayDate(date){
+    await locatorSelectDate.waitForDisplayed()
+    await locatorSelectDate.addValue(date)
+}
+
+// function 5
+async function verifyBirthdayDate(date){
+    //let finalLocator = await $("input[name='birthday']")
+    let actualDate = await locatorSelectDate.getValue()
+    await expect(actualDate).toBe(date)
+}
 
 Given('user opens the calendar', async () => {
     await openTheWebsite()
@@ -36,14 +41,15 @@ Given('user opens the calendar', async () => {
     await click()
 });
 
-When('I select the date {string}', async (date) => {
-    const [day, month, year] = date.split('-')
-    const dayElement = await $(`//td[@role='gridcell' and text()='${parseInt(day, 10)}']`);
-    await dayElement.click();
+When('user selects the date', async () => {
+    await selectBirthdayDate('22')
+    await selectBirthdayDate('6')
+    await browser.keys(['ArrowRight']);
+    await selectBirthdayDate('2024')
 });
 
-Then('the selected date {string} should be in the input field', async (expectedDate)=> {
-    await browser.pause(4000)
+Then('the selected date should be in the input field', async ()=> {
+    await verifyBirthdayDate('2024-06-22')
 });
 
 

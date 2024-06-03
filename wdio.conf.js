@@ -21,7 +21,12 @@ exports.config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        '32_nestedFrames.feature'
+        // '27_jqueryDatePicker.feature',
+        '21_fileDownload.feature',
+        // '9A_bootstrapDatePicker.feature',
+        //'26_javascriptAlerts.feature',
+        //'10_bootstrapListBox.feature'
+        //'32_nestedFrames.feature'
         //'33_overlappedElement.feature'
     //    '34_progressBarModal.feature',
     //    './features/**/*.feature'
@@ -148,12 +153,12 @@ exports.config = {
         // require: ['./features/step-definitions/11_bootstrapModal.js'], 
         // require: ['./features/step-definitions/5B_tableSortAndSearch.js'],
         //require: ['./features/step-definitions/8_bootstrapAlerts.js'],
-        // require: ['./features/step-definitions/9_bootstrapDatePicker.js'],
+        require: ['./features/step-definitions/9A_bootstrapDatePicker.js'],
         // require: ['./features/step-definitions/37B_selectDropdownList.js'],
         // require: ['./features/step-definitions/40_statusCodes.js'],
         // require: ['./features/step-definitions/41_uploadFileDemo.js'],
         // require: ['./features/step-definitions/38_shadowDOM.js'],
-    //     require: ['./features/step-definitions/10_bootstrapListBox.js'],
+    //   require: ['./features/step-definitions/10_bootstrapListBox.js'],
         // require: ['./features/step-definitions/24_iframeDemo.js'],
     //    require: ['./features/step-definitions/31_keyPress.js'],
     // require: ['./features/step-definitions/28_jqueryDownloadProgressBars.js'],
@@ -165,12 +170,14 @@ exports.config = {
     // require: ['./features/step-definitions/18_dragAndDropSliders.js'],
     //require: ['./features/step-definitions/30_jquerySelectDropdown.js'],
     //require: ['./features/step-definitions/29_jqueryListBox.js'],
-    require: ['./features/step-definitions/32_nestedFrames.js'],
+//    require: ['./features/step-definitions/32_nestedFrames.js'],
     // require: ['./features/step-definitions/35_radioButtonsDemo.js'],
     // require: ['./features/step-definitions/43_windowPopupModal.js'],
     // require: ['./features/step-definitions/34_progressBarModal.js'],
     // require: ['./features/step-definitions/33_overlappedElement.js'],
-
+// require: ['./features/step-definitions/26_javascriptAlerts.js'],
+// require: ['./features/step-definitions/27_jqueryDatePicker.js'],
+require: ['./features/step-definitions/21_fileDownload.js'],
 //    require: ['./features/**/*.js'],
 
 

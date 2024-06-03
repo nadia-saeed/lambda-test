@@ -3,10 +3,8 @@ const { expect, $ } = require('@wdio/globals')
 
 const url = 'https://www.lambdatest.com/selenium-playground/'
 const locatorBootstrapDatePicker =  "//*[contains(text(),'Bootstrap Date Picker')]"
-const locatorStartDate = 'input[placeholder="Start date"]'
-const locatorEndDate = 'input[placeholder="End date"]'
-let startDate = ''
-let endDate = ''
+const locatorStartDate = $('input[placeholder="Start date"]')
+const locatorEndDate = $('input[placeholder="End date"]')
 
 // function 1
 async function openTheWebsite(){
@@ -20,21 +18,17 @@ async function clickSpecificGround(locator){
 }
 
 // function 3
-async function enterStartDate (dateOne){
-startDate = $(locatorStartDate)
-await startDate.waitForDisplayed()
-for(const char of dateOne){
-    await startDate.addValue(char)
+async function enterDate (element, date){
+    await element.waitForDisplayed()
+    for(const char of date){
+    await element.addValue(char)
 }
 }
 
-// function 4
-async function enterEndDate(dateTwo){
-    endDate = $(locatorEndDate)
-    await endDate.waitForDisplayed()
-    for(const char of dateTwo){
-        await endDate.addValue(char)
-    }
+// function 5
+async function verifyDateRange(element, expectedDate){
+    let actualDate = await element.getValue()
+    await expect (actualDate).toBe(expectedDate)
 }
 
 Given('user opens the website', async () => {
@@ -43,11 +37,12 @@ Given('user opens the website', async () => {
 });
 
 When('user chooses valid dates', async () => {
-    await enterStartDate('17-May-2023')
-    await enterEndDate('17-May-2024')
+    await enterDate(locatorStartDate, '17-May-2023')
+    await enterDate(locatorEndDate, '17-May-2024')
 });
 
 Then('dates are verified as true', async ()=> {
-    await browser.pause(4000)
+    await verifyDateRange(locatorStartDate, '17-May-2023')
+    await verifyDateRange(locatorEndDate, '17-May-2024')
 });
 
